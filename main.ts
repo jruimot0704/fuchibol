@@ -1,23 +1,19 @@
-radio.onReceivedNumber(function (receivedNumber) {
-    if (receivedNumber == "adelante") {
-        cuteBot.motors(100, -100)
-        basic.pause(100)
-        cuteBot.motors(100, -100)
-    } else if (receivedNumber == "atras") {
-        cuteBot.motors(100, -100)
-        basic.pause(100)
-        cuteBot.motors(100, -100)
-    } else if (receivedNumber == "derecha") {
-        cuteBot.motors(100, -100)
-        basic.pause(100)
-        cuteBot.motors(100, -100)
-    } else if (receivedNumber == "izquierda") {
-        cuteBot.motors(100, -100)
-        basic.pause(100)
-        cuteBot.motors(100, -100)
-    }
+input.onGesture(Gesture.ScreenDown, function () {
+    radio.sendString("parar")
 })
-radio.setGroup(1)
+input.onButtonPressed(Button.A, function () {
+    basic.showArrow(ArrowNames.West)
+    radio.sendString("izquierda")
+})
+input.onButtonPressed(Button.AB, function () {
+    basic.showArrow(ArrowNames.North)
+    radio.sendString("alante")
+})
+input.onButtonPressed(Button.B, function () {
+    basic.showArrow(ArrowNames.East)
+    radio.sendString("derecha")
+})
+radio.setGroup(141221)
 basic.forever(function () {
 	
 })
